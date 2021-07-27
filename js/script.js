@@ -44,8 +44,8 @@ function updateWeatherData(data){
     const clouds = data.clouds.all;
     const wind = data.wind.speed;
     const city = data.name;
-    const sunRise = data.sys.sunrise;
-    const sunSet = data.sys.sunset;
+    const sunRise = new Date(data.sys.sunrise * 1000);
+    const sunSet = new Date(data.sys.sunset * 1000);
     
 
     document.getElementById("temp").innerHTML = temp;
@@ -53,7 +53,7 @@ function updateWeatherData(data){
     document.getElementById("pressure").innerHTML = pressure;
     document.getElementById("cloudsPerc").innerHTML = clouds;
     document.getElementById("windSpeed").innerHTML = wind;
-    document.getElementById("sunRice").innerHTML = sunRise;
-    document.getElementById("sunSet").innerHTML = sunSet;
+    document.getElementById("sunRice").innerHTML = sunRise.getHours() + ":" + sunRise.getMinutes();
+    document.getElementById("sunSet").innerHTML = sunSet.getHours() + ":" + sunSet.getMinutes();
 
 }
