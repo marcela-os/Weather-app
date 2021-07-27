@@ -74,5 +74,10 @@ function updateWeatherData(data){
     document.getElementById("windSpeed").innerHTML = wind;
     document.getElementById("sunRice").innerHTML = convertTimeSunRise();
     document.getElementById("sunSet").innerHTML = convertTimeSunSet();
+    document.getElementById("locationLink").innerHTML = city;
+    
+
+    let imgUrl = "http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png"
+    document.getElementById("currentWeatherImg").setAttribute("src", imgUrl);
 
 }
