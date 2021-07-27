@@ -67,15 +67,13 @@ function updateWeatherData(data){
         return hours + ":" + minutes;
     }
 
-    document.getElementById("temp").innerHTML = temp;
-    document.getElementById("humidity").innerHTML = humid;
-    document.getElementById("pressure").innerHTML = pressure;
-    document.getElementById("cloudsPerc").innerHTML = clouds;
-    document.getElementById("windSpeed").innerHTML = wind;
+    document.getElementById("temp").innerHTML = temp + "°C";
+    document.getElementById("humidity").innerHTML = humid + "%";
+    document.getElementById("pressure").innerHTML = pressure + "hPa";
+    document.getElementById("cloudsPerc").innerHTML = clouds + "%";
+    document.getElementById("windSpeed").innerHTML = wind + "km/h";
     document.getElementById("sunRice").innerHTML = convertTimeSunRise();
     document.getElementById("sunSet").innerHTML = convertTimeSunSet();
-    //document.getElementById("locationLink").innerHTML = city;
-    
 
     let imgUrl = "http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png"
     document.getElementById("currentWeatherImg").setAttribute("src", imgUrl);
