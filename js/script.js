@@ -5,6 +5,10 @@ function startApp(){
 }
 window.onload = startApp;
 
+
+let lat;
+let long;
+
 function getLocation(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition((position) => {
