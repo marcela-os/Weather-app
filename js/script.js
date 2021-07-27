@@ -27,4 +27,10 @@ function getLocation(){
 function getWeatherData() {
     let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
     console.log(url);
+
+    fetch(url).then(function(response){
+        response.json().then( function(data){
+            console.log(data);
+        });
+    });
 }
