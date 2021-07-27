@@ -47,13 +47,32 @@ function updateWeatherData(data){
     const sunRise = new Date(data.sys.sunrise * 1000);
     const sunSet = new Date(data.sys.sunset * 1000);
     
+    function convertTimeSunRise(){
+        let hours = sunRise.getHours();
+        let minutes = sunRise.getMinutes();
+
+        hours = hours >=10 ? hours : "0" + hours.toString();
+        minutes = minutes >=10 ? minutes : "0" + minutes.toString();
+        
+        return hours + ":" + minutes;
+    }
+
+    function convertTimeSunSet(){
+        let hours = sunSet.getHours();
+        let minutes = sunSet.getMinutes();
+
+        hours = hours >=10 ? hours : "0" + hours.toString();
+        minutes = minutes >=10 ? minutes : "0" + minutes.toString();
+        
+        return hours + ":" + minutes;
+    }
 
     document.getElementById("temp").innerHTML = temp;
     document.getElementById("humidity").innerHTML = humid;
     document.getElementById("pressure").innerHTML = pressure;
     document.getElementById("cloudsPerc").innerHTML = clouds;
     document.getElementById("windSpeed").innerHTML = wind;
-    document.getElementById("sunRice").innerHTML = sunRise.getHours() + ":" + sunRise.getMinutes();
-    document.getElementById("sunSet").innerHTML = sunSet.getHours() + ":" + sunSet.getMinutes();
+    document.getElementById("sunRice").innerHTML = convertTimeSunRise();
+    document.getElementById("sunSet").innerHTML = convertTimeSunSet();
 
 }
