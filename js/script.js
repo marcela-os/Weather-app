@@ -31,6 +31,29 @@ function getWeatherData() {
     fetch(url).then(function(response){
         response.json().then( function(data){
             console.log(data);
+
+            updateWeatherData(data);
         });
     });
+}
+
+function updateWeatherData(data){
+    const temp = data.main.temp;
+    const humid = data.main.humidity;
+    const pressure = data.main.pressure;
+    const clouds = data.clouds.all;
+    const wind = data.wind.speed;
+    const city = data.name;
+    const sunRise = data.sys.sunrise;
+    const sunSet = data.sys.sunset;
+    
+
+    document.getElementById("temp").innerHTML = temp;
+    document.getElementById("humidity").innerHTML = humid;
+    document.getElementById("pressure").innerHTML = pressure;
+    document.getElementById("cloudsPerc").innerHTML = clouds;
+    document.getElementById("windSpeed").innerHTML = wind;
+    document.getElementById("sunRice").innerHTML = sunRise;
+    document.getElementById("sunSet").innerHTML = sunSet;
+
 }
