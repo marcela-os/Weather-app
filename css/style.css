@@ -9,6 +9,7 @@ body {
 a {
   text-decoration: none;
   color: black;
+  font-size: 24px;
 }
 
 a:hover {
@@ -21,8 +22,18 @@ td {
   text-align: center;
 }
 
+img {
+  size: 150%;
+}
+
 .bdr {
   border-radius: 25px;
   overflow: hidden;
+}
+
+.hd {
+  height: 90px;
+  font-size: 28px;
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */
