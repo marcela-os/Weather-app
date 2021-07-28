@@ -1,0 +1,31 @@
+/* Variables */
+
+$font-text: "Baloo Chettan 2", cursive;
+
+/* Global */
+
+body {
+  font-family: $font-text;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+td {
+  text-align: center;
+}
+
+.bdr {
+  border-radius: 25px;
+  overflow: hidden;
+}
