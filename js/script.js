@@ -67,7 +67,7 @@ function updateWeatherData(data){
         return hours + ":" + minutes;
     }
 
-    document.getElementById("temp").innerHTML = temp + "°C";
+    document.getElementById("temp").innerHTML = Math.round(temp) + "°C";
     document.getElementById("humidity").innerHTML = humid + "%";
     document.getElementById("pressure").innerHTML = pressure + "hPa";
     document.getElementById("cloudsPerc").innerHTML = clouds + "%";
